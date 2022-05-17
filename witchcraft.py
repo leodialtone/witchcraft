@@ -3,8 +3,8 @@ import curses
 
 screen = curses.initscr()
 h, w = screen.getmaxyx()
-menu = 1
-menus = [[], ['make ice cream', 'quit'], ['strawberry', 'chocolate', 'vanilla', 'back']] 
+menu = 0
+menus = [['make ice cream', 'quit'], ['strawberry', 'chocolate', 'vanilla', 'back']] 
 
 #0 - main
 #1 - flavours
@@ -40,13 +40,13 @@ def run(current_row):
 
     global menu
     
-    if menu == 1:
+    if menu == 0:
         if current_row == 0:
             menu +=  1
         elif current_row == 1:
             quit()
         
-    elif menu == 2:
+    elif menu == 1:
         if current_row == 0:
               text_to_screen(strawberry())
         elif current_row == 1:
